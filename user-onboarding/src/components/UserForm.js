@@ -24,18 +24,28 @@ export default function UserForm(props) {
     <form className='form-group' onSubmit={onSubmit}>
       <h2>Add User</h2>
       <div className='errors'>
-        <div>{errors.name}</div>
+        <div>{errors.firstName}</div>
+        <div>{errors.lastName}</div>
         <div>{errors.email}</div>
         <div>{errors.password}</div>
         <div>{errors.tos}</div>
       </div>
 
       <div className='inputs'>
-        <label>Name
+        <label>First Name
           <input 
-            value={values.name}
+            value={values.first_name}
             onChange={onChange}
-            name='name'
+            name='firstName'
+            type='text'
+          />
+        </label>
+
+        <label>Last Name
+          <input 
+            value={values.last_name}
+            onChange={onChange}
+            name='lastName'
             type='text'
           />
         </label>

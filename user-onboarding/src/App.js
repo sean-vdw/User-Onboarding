@@ -9,13 +9,15 @@ import User from './components/User';
 
 // Initial States
 const initialFormValues = {
-  name: '',
+  firstName: '',
+  lastName: '',
   email: '',
   password: '',
   tos: false,
 }
 const initialFormErrors = {
-  name: '',
+  firstName: '',
+  lastName: '',
   email: '',
   password: '',
   tos: '',
@@ -72,7 +74,8 @@ function App() {
 
   const formSubmit = () => {
     const newUser = {
-      name: formValues.name.trim(),
+      firstName: formValues.firstName.trim(),
+      lastName: formValues.lastName.trim(),
       email: formValues.email.trim(),
       password: formValues.password,
       tos: formValues.tos,
