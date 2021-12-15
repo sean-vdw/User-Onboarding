@@ -94,6 +94,24 @@ useEffect(() => {
       <header>
         <h1>User Onboarding</h1>
       </header>
+      <div className='form-container'>
+        <UserForm
+          values={formValues}
+          change={inputChange}
+          submit={formSubmit}
+          disabled={disabled}
+          errors={formErrors}
+        />
+      </div>
+      <div className='users-container'>
+        {
+          users.map(user => {
+            return (
+              <User key={user.id} details={user}/>
+            )
+          })
+        }
+      </div>
     </div>
   );
 }
