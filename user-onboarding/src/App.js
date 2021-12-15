@@ -31,10 +31,20 @@ function App() {
   const [disabled, setDisabled] = useState(initialDisabled)
 
   // Helpers
+  const getUsers = () => {
+    axios.get('https://reqres.in/api/users')
+      .then(res => {
+        setUsers(res.data.data);
+      })
+      .catch(err => {
+        console.error(err);
+      })
+  }
+  
   const postNewUser = newUser => {
     axios.post('https://reqres.in/api/users', newUser)
       .then(res => {
-        console.log(res);
+        setUsers([ res.data.data, ...users ])
       })
       .catch(err => {
         console.error(err);
@@ -71,13 +81,19 @@ function App() {
   }
 
   // Side Effects
+useEffect(() => {
+  getUsers()
+}, [])
+
   useEffect(() => {
     schema.isValid(formValues).then(valid => setDisabled(!valid))
   }, [formValues])
 
   return (
     <div className="App">
-
+      <header>
+        <h1>User Onboarding</h1>
+      </header>
     </div>
   );
 }
