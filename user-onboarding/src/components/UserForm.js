@@ -66,6 +66,7 @@ export default function UserForm(props) {
             type='checkbox'
           />
         </label>
+        <button>Submit</button>
       </div>
     </form>
   )
