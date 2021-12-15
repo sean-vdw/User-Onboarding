@@ -24,8 +24,8 @@ export default function UserForm(props) {
     <form className='form-group' onSubmit={onSubmit}>
       <h2>Add User</h2>
       <div className='errors'>
-        <div>{errors.firstName}</div>
-        <div>{errors.lastName}</div>
+        <div>{errors.first_name}</div>
+        <div>{errors.last_name}</div>
         <div>{errors.email}</div>
         <div>{errors.password}</div>
         <div>{errors.tos}</div>
@@ -36,7 +36,7 @@ export default function UserForm(props) {
           <input 
             value={values.first_name}
             onChange={onChange}
-            name='firstName'
+            name='first_name'
             type='text'
           />
         </label>
@@ -45,7 +45,7 @@ export default function UserForm(props) {
           <input 
             value={values.last_name}
             onChange={onChange}
-            name='lastName'
+            name='last_name'
             type='text'
           />
         </label>

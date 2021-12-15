@@ -9,15 +9,15 @@ import User from './components/User';
 
 // Initial States
 const initialFormValues = {
-  firstName: '',
-  lastName: '',
+  first_name: '',
+  last_name: '',
   email: '',
   password: '',
   tos: false,
 }
 const initialFormErrors = {
-  firstName: '',
-  lastName: '',
+  first_name: '',
+  last_name: '',
   email: '',
   password: '',
   tos: '',
@@ -46,7 +46,7 @@ function App() {
   const postNewUser = newUser => {
     axios.post('https://reqres.in/api/users', newUser)
       .then(res => {
-        setUsers([ res.data.data, ...users ])
+        setUsers([ res.data, ...users ])
       })
       .catch(err => {
         console.error(err);
@@ -74,8 +74,8 @@ function App() {
 
   const formSubmit = () => {
     const newUser = {
-      firstName: formValues.firstName.trim(),
-      lastName: formValues.lastName.trim(),
+      first_name: formValues.first_name.trim(),
+      last_name: formValues.last_name.trim(),
       email: formValues.email.trim(),
       password: formValues.password,
       tos: formValues.tos,
