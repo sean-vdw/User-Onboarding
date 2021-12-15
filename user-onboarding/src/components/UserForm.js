@@ -39,7 +39,7 @@ export default function UserForm(props) {
             name='first_name'
             type='text'
           />
-        </label>
+        </label><br/>
 
         <label>Last Name
           <input 
@@ -48,7 +48,7 @@ export default function UserForm(props) {
             name='last_name'
             type='text'
           />
-        </label>
+        </label><br/>
 
         <label>Email
           <input 
@@ -57,7 +57,7 @@ export default function UserForm(props) {
             name='email'
             type='email'
           />
-        </label>
+        </label><br/>
 
         <label>Password
           <input 
@@ -66,7 +66,7 @@ export default function UserForm(props) {
             name='password'
             type='password'
           />
-        </label>
+        </label><br/>
 
         <label>Terms of Service
           <input 
@@ -75,7 +75,7 @@ export default function UserForm(props) {
             name='tos'
             type='checkbox'
           />
-        </label>
+        </label><br/>
         <button disabled={disabled}>Submit</button>
       </div>
     </form>
