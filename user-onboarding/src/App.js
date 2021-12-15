@@ -3,7 +3,7 @@ import axios from 'axios';
 import * as yup from 'yup';
 import './App.css';
 
-import schema from './validate/formSchema';
+import formSchema from './validate/formSchema';
 import UserForm from './components/UserForm';
 import User from './components/User';
 
@@ -55,7 +55,7 @@ function App() {
   }
 
   const validate = (name, value) => {
-    yup.reach(schema, name)
+    yup.reach(formSchema, name)
       .validate(value)
       .then(() => setFormErrors({ ...formErrors, [name]: '' }))
       .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0] }))
@@ -86,7 +86,7 @@ useEffect(() => {
 }, [])
 
   useEffect(() => {
-    schema.isValid(formValues).then(valid => setDisabled(!valid))
+    formSchema.isValid(formValues).then(valid => setDisabled(!valid))
   }, [formValues])
 
   return (
