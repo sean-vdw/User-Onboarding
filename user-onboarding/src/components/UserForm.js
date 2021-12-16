@@ -76,7 +76,7 @@ export default function UserForm(props) {
             type='checkbox'
           />
         </label><br/>
-        <button disabled={disabled}>Submit</button>
+        <button id='submitBtn' disabled={disabled}>Submit</button>
       </div>
     </form>
   )
